@@ -1,104 +1,238 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COLCOMP Student Registration Form</title>
+
+    <title>COLCOMP Student Registration</title>
+
+    <style>
+        /* General page styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            background-color: #123b70;
+            color: white;
+            padding: 25px 15px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        header h1 {
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        /* Main section */
+        main {
+            max-width: 600px;
+            margin: 30px auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #123b70;
+            margin-bottom: 10px;
+        }
+
+        /* Form styling */
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #123b70;
+            padding: 0 8px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #bbb;
+            border-radius: 6px;
+            font-size: 15px;
+            background-color: white;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #123b70;
+            box-shadow: 0 0 4px rgba(18,59,112,0.3);
+        }
+
+        /* Submit button */
+        button {
+            width: 100%;
+            padding: 13px;
+            background-color: #123b70;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0b2850;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 21px;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            fieldset {
+                padding: 12px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
     <header>
         <h1>COLCOMP Student Registration Form</h1>
-        <p>College of Computing student information form</p>
+        <p>College of Computing</p>
     </header>
 
     <main>
+
         <section aria-labelledby="form-heading">
+
             <h2 id="form-heading">Student Information</h2>
-            <p>Please complete all the required fields below.</p>
+
+            <p>Please complete all required fields.</p>
 
             <form action="#" method="post">
 
                 <fieldset>
+
                     <legend>Personal and Academic Details</legend>
 
-                    <p>
-                        <label for="name">Full Name:</label><br>
-                        <input
-                            type="text"
-                            id="name"
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name"
                             name="name"
-                            autocomplete="name"
                             placeholder="Enter your full name"
+                            autocomplete="name"
                             required>
-                    </p>
+                    </div>
 
-                    <p>
-                        <label for="matric">Matric Number:</label><br>
-                        <input
-                            type="text"
-                            id="matric"
+                    <div class="form-group">
+                        <label for="matric">Matric Number:</label>
+                        <input type="text" id="matric"
                             name="matric_number"
-                            placeholder="Enter your matric number"
+                            placeholder="Enter matric number"
                             required>
-                    </p>
+                    </div>
 
-                    <p>
-                        <label for="department">Department:</label><br>
-                        <select id="department" name="department" required>
-                            <option value="">-- Select Department --</option>
-                            <option value="Information and Communication Technology">
-                                Information and Communication Technology
-                            </option>
-                            <option value="Cyber Security">Cyber Security</option>
-                            <option value="Data Science">Data Science</option>
-                            <option value="Information Technology">
-                                Information Technology
-                            </option>
-                            <option value="Computer Science">Computer Science</option>
-                            <option value="Information System">Information System</option>
-                            <option value="Software Engineering">
-                                Software Engineering
-                            </option>
+                    <div class="form-group">
+                        <label for="department">Department:</label>
+                        <select id="department"
+                            name="department" required>
+
+                            <option value="">Select Department</option>
+                            <option>Information and Communication Technology</option>
+                            <option>Cyber Security</option>
+                            <option>Data Science</option>
+                            <option>Information Technology</option>
+                            <option>Computer Science</option>
+                            <option>Information System</option>
+                            <option>Software Engineering</option>
+
                         </select>
-                    </p>
+                    </div>
 
-                    <p>
-                        <label for="email">Email Address:</label><br>
-                        <input
-                            type="email"
-                            id="email"
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email"
                             name="email"
-                            autocomplete="email"
                             placeholder="example@email.com"
+                            autocomplete="email"
                             required>
-                    </p>
+                    </div>
 
-                    <p>
-                        <label for="phone">Phone Number:</label><br>
-                        <input
-                            type="tel"
-                            id="phone"
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone"
                             name="phone"
+                            placeholder="Enter phone number"
                             autocomplete="tel"
-                            placeholder="Enter your phone number"
                             required>
-                    </p>
+                    </div>
 
-                    <p>
-                        <label for="gender">Gender:</label><br>
-                        <select id="gender" name="gender" required>
-                            <option value="">-- Select Gender --</option>
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <select id="gender"
+                            name="gender" required>
+
+                            <option value="">Select Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
-                        </select>
-                    </p>
 
-                    <p>
-                        <label for="programme">Programme:</label><br>
-                        <select id="programme" name="programme" required>
-                            <option value="">-- Select Programme --</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="programme">Programme:</label>
+                        <select id="programme"
+                            name="programme" required>
+
+                            <option value="">Select Programme</option>
                             <option value="Full-time">Full-time</option>
                             <option value="Part-time (Weekdays)">
                                 Part-time (Weekdays)
@@ -106,14 +240,20 @@
                             <option value="Part-time (Weekends)">
                                 Part-time (Weekends)
                             </option>
-                        </select>
-                    </p>
 
-                    <button type="submit">Submit Registration</button>
+                        </select>
+                    </div>
+
+                    <button type="submit">
+                        Submit Registration
+                    </button>
 
                 </fieldset>
+
             </form>
+
         </section>
+
     </main>
 
     <footer>
